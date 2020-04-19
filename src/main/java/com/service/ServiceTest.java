@@ -1,5 +1,5 @@
 package com.service;
-import com.jayway.restassured.internal.assertion.Assertion;
+
 import com.jayway.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -28,7 +28,7 @@ public class ServiceTest {
                 .when()
                 .post(basePath)
                 .then()
-                .statusCode(200)
+                .statusCode(code)
                 .contentType(ContentType.JSON)
                 .extract()
                 .response();
@@ -48,7 +48,7 @@ public class ServiceTest {
                 .when()
                 .post(basePath)
                 .then()
-                .statusCode(400)
+                .statusCode(code)
                 .contentType(ContentType.JSON)
                 .extract()
                 .response();
